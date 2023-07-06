@@ -1,14 +1,14 @@
 import React from 'react';
 // ADD IMPORTS BACK FOR GRAPHS SECTION
-// import GrantRatesByOfficeImg from '../../../styles/Images/bar-graph-no-text.png';
-// import GrantRatesByNationalityImg from '../../../styles/Images/pie-chart-no-text.png';
-// import GrantRatesOverTimeImg from '../../../styles/Images/line-graph-no-text.png';
+import GrantRatesByOfficeImg from '../../../styles/Images/bar-graph-no-text.png';
+import GrantRatesByNationalityImg from '../../../styles/Images/pie-chart-no-text.png';
+import GrantRatesOverTimeImg from '../../../styles/Images/line-graph-no-text.png';
 import HrfPhoto from '../../../styles/Images/paper-stack.jpg';
 import '../../../styles/RenderLandingPage.less';
 import { Button } from 'antd';
 import { useHistory } from 'react-router-dom';
 // for the purposes of testing PageNav
-// import PageNav from '../../common/PageNav';
+import PageNav from '../../common/PageNav';
 
 function RenderLandingPage(props) {
   const scrollToTop = () => {
@@ -33,6 +33,37 @@ function RenderLandingPage(props) {
 
       {/* Graphs Section: Add code here for the graphs section for your first ticket */}
       {/* <div className="graphs-section"> */}
+      <div className="graphs-section">
+        <div className="graph-container">
+          <img
+            src={GrantRatesByOfficeImg}
+            alt="bar chart"
+            className="graph-img"
+          />
+
+          <h2>Search Grant Rates By Office</h2>
+        </div>
+
+        <div className="graph-container">
+          <img
+            src={GrantRatesByNationalityImg}
+            alt="pie chart"
+            className="graph-img"
+          />
+
+          <h2>Search Grant Rates By Nationality</h2>
+        </div>
+
+        <div className="graph-container">
+          <img
+            src={GrantRatesOverTimeImg}
+            alt="line chart"
+            className="graph-img"
+          />
+
+          <h2>Search Grant Rates Over Time</h2>
+        </div>
+      </div>
       <div className="view-more-data-btn-container">
         <Button
           type="default"
