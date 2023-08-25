@@ -1,5 +1,4 @@
 import React from 'react';
-// ADD IMPORTS BACK FOR GRAPHS SECTION
 import GrantRatesByOfficeImg from '../../../styles/Images/bar-graph-no-text.png';
 import GrantRatesByNationalityImg from '../../../styles/Images/pie-chart-no-text.png';
 import GrantRatesOverTimeImg from '../../../styles/Images/line-graph-no-text.png';
@@ -8,7 +7,12 @@ import '../../../styles/RenderLandingPage.less';
 import { Button } from 'antd';
 import { useHistory } from 'react-router-dom';
 // for the purposes of testing PageNav
-import PageNav from '../../common/PageNav';
+// import PageNav from '../../common/PageNav';
+
+const downloadAddress =
+  'https://humanrightsfirst.org/wp-content/uploads/2022/10/COW2021001887-I589Data.csv';
+const readMoreAddress =
+  'https://humanrightsfirst.org/library/uscis-records-reveal-systemic-disparities-in-asylum-decisions/';
 
 function RenderLandingPage(props) {
   const scrollToTop = () => {
@@ -31,8 +35,7 @@ function RenderLandingPage(props) {
         </div>
       </div>
 
-      {/* Graphs Section: Add code here for the graphs section for your first ticket */}
-      {/* <div className="graphs-section"> */}
+      {/* Graphs Section */}
       <div className="graphs-section">
         <div className="graph-container">
           <img
@@ -73,13 +76,15 @@ function RenderLandingPage(props) {
           View the Data
         </Button>
         <div className="download-data-btn-container">
-          <Button
-            type="default"
-            style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
-            onClick={() => history.push('/graphs')}
-          >
-            Download the Data
-          </Button>
+          <a href={downloadAddress}>
+            <Button
+              type="default"
+              style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
+              onClick={() => history.push('/graphs')}
+            >
+              Download the Data
+            </Button>
+          </a>
         </div>
       </div>
 
@@ -100,8 +105,7 @@ function RenderLandingPage(props) {
         </div>
       </div>
 
-      {/* Bottom Section: Add code here for the graphs section for your first ticket */}
-      {/* <div className="bottom-section">*/}
+      {/* Bottom Section */}
       <div className="bottom-section">
         <h1>Systemic Disparity Insights</h1>
         <div className="data-container">
@@ -129,12 +133,15 @@ function RenderLandingPage(props) {
             </h3>
           </div>
         </div>
-        <Button
-          type="default"
-          style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
-        >
-          Read More
-        </Button>
+        <a href={readMoreAddress}>
+          <Button
+            type="default"
+            style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
+          >
+            Read More
+          </Button>
+        </a>
+
         <p onClick={() => scrollToTop()} className="back-to-top">
           Back To Top ^
         </p>
