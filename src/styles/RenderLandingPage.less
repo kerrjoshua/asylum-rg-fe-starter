@@ -10,7 +10,7 @@
 
 .header {
     background-color: @main-color;
-    display:flex;
+    display: flex;
     text-align: center;
     width: 100%;
     height: 20vh;
@@ -41,40 +41,55 @@
     font-size: 1.2rem;
 }
 
- .graphs-section {
+.graphs-section {
+    margin: 0 auto;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
- }
+    max-width: 90%;
+}
 
- .graph-container {
+.graph-container {
     display: flex;
+    height: 350px;
+    Width: 200px;
     flex-direction: column;
-    justify-content: space-between;
-    max-width: 20%;
+    justify-content: space-evenly;
     align-items: center;
-    border: 1px black solid;
- }
+    //border: 1px pink solid;
+    flex: 1 0 0;
+}
 
- 
 
- .graph-container h2 {
+
+.graph-container h2 {
     font-family: 'beatrice regular';
-    font-size: 1.6rem;
- }
+    font-size: 1.53rem;
+}
 
- .graphs-section img {
+.graphs-section img {
     height: 170px;
- }
+}
 
- 
+
 
 .view-more-data-btn-container {
+    display: flex;
     height: 44px;
-    width: 180px;
+    width: 350px;
+    margin: 0 auto;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
+.download-data-btn-container {
+    height: 44px;
+    width: 220px;
     margin: 0 auto;
     text-align: center;
     margin-bottom: 10%;
+    justify-content: space-between;
 }
 
 .middle-section {
@@ -99,9 +114,70 @@
     font-size: 1.4rem;
 }
 
-// .bottom-section {
-//      ADD THIS BACK IN WHEN YOU HAVE A BOTTOM SECTION
-// }
+.bottom-section {
+    //border: solid black 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.bottom-section h1 {
+    font-family: "moneta";
+    font-size: 3.5rem;
+    margin-bottom: 7%;
+}
+
+@data-point-width: 433px;
+.data-container {
+    display: flex;
+    width: 95%;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+    //border: solid red 2px;
+}
+
+.first-data-point-container {
+    width: @data-point-width;
+}
+.second-data-point-container {
+    width: @data-point-width;
+}
+.third-data-point-container {
+    width: @data-point-width;
+}
+
+.first-data-point-container h2 {
+    font-family: 'moneta';
+    font-size: 3rem;
+}
+
+.first-data-point-container h3 {
+    font-family: 'acumin';
+    font-size: 1.2rem;
+}
+
+.second-data-point-container h2 {
+    font-family: 'beatrice_regular';
+    font-size: 3rem;
+}
+
+.second-data-point-container h3 {
+    font-family: 'acumin';
+    font-size: 1.2rem;
+}
+
+.third-data-point-container h2 {
+    font-family: 'beatrice';
+    font-size: 3rem;
+}
+
+.third-data-point-container h3 {
+    font-family: 'acumin';
+    font-size: 1.2rem;
+}
 
 .back-to-top {
     width: 8%;
@@ -119,29 +195,30 @@
 }
 
 .ant-btn:hover {
-    border-color: @secondary-color  !important;
+    border-color: @secondary-color !important;
 }
 
 @media @mobile-small {
     .header {
         height: 30vh;
-       display: block;
-       position: relative;
+        display: block;
+        position: relative;
     }
-    .hrf-logo-img-container{
-       height:fit-content;
-       position: absolute;
-       top: 0;
-       left: 0;
-       margin: 2% 2%;
+
+    .hrf-logo-img-container {
+        height: fit-content;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 2% 2%;
     }
 
     .hrf-logo-img-container img {
         height: 30px;
         width: 48px;
-       
+
     }
-   
+
     .header-text-container h1 {
         font-size: 1.5rem;
         padding-top: 5%;
@@ -194,7 +271,7 @@
         width: 85%;
         text-align: center;
         margin: 0 auto;
-       
+
     }
 
     .middle-section-text-container h3 {
@@ -237,23 +314,24 @@
 @media @mobile-medium {
     .header {
         height: 20vh;
-       display: block;
-       position: relative;
+        display: block;
+        position: relative;
     }
-    .hrf-logo-img-container{
-       height:fit-content;
-       position: absolute;
-       top: 0;
-       left: 0;
-       margin: 2% 2%;
+
+    .hrf-logo-img-container {
+        height: fit-content;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 2% 2%;
     }
 
     .hrf-logo-img-container img {
         height: 30px;
         width: 48px;
-       
+
     }
-   
+
     .header-text-container h1 {
         font-size: 1.5rem;
         padding-top: 5%;
@@ -295,7 +373,7 @@
         background-color: @secondary-color;
         padding-top: 5%;
         text-align: center;
-        
+
     }
 
     .hrf-img {
@@ -305,7 +383,7 @@
 
     .middle-section-text-container {
         width: 85%;
-       text-align: center;
+        text-align: center;
         margin: 0 auto;
     }
 
@@ -352,22 +430,23 @@
 @media @mobile-large {
     .header {
         height: 20vh;
-       display: block;
-       position: relative;
+        display: block;
+        position: relative;
     }
-    .hrf-logo-img-container{
-       height:fit-content;
-       position: absolute;
-       top: 0;
-       left: 0;
-       margin: 2% 2%;
+
+    .hrf-logo-img-container {
+        height: fit-content;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 2% 2%;
     }
 
     .hrf-logo-img-container img {
         height: 30px;
         width: 48px;
     }
-   
+
     .header-text-container h1 {
         font-size: 1.5rem;
         padding-top: 5%;
@@ -418,7 +497,7 @@
 
     .middle-section-text-container {
         width: 85%;
-       text-align: center;
+        text-align: center;
         margin: 0 auto;
     }
 
@@ -460,29 +539,30 @@
         display: flex;
         flex-wrap: wrap;
     }
-    
+
 }
 
 @media @tablet-small {
     .header {
         height: 30vh;
-       display: block;
-       position: relative;
+        display: block;
+        position: relative;
     }
-    .hrf-logo-img-container{
-       height:fit-content;
-       position: absolute;
-       top: 0;
-       left: 0;
-       margin: 1% 1%;
+
+    .hrf-logo-img-container {
+        height: fit-content;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 1% 1%;
     }
 
     .hrf-logo-img-container img {
         height: 66px;
         width: 108px;
-       
+
     }
-   
+
     .header-text-container h1 {
         font-size: 2.5rem;
         padding-top: 5%;
@@ -580,23 +660,24 @@
 @media @tablet-large {
     .header {
         height: 30vh;
-       display: block;
-       position: relative;
+        display: block;
+        position: relative;
     }
-    .hrf-logo-img-container{
-       height:fit-content;
-       position: absolute;
-       top: 0;
-       left: 0;
-       
+
+    .hrf-logo-img-container {
+        height: fit-content;
+        position: absolute;
+        top: 0;
+        left: 0;
+
     }
 
     .hrf-logo-img-container img {
         height: 83px;
         width: 136px;
-       
+
     }
-   
+
     .header-text-container h1 {
         font-size: 3.5rem;
         padding-top: 5%;
@@ -649,6 +730,7 @@
         height: 232px;
         width: 450px;
     }
+
     .grant-rates-over-time-container p {
         font-size: 2.5rem;
     }
@@ -698,9 +780,11 @@
         width: 85%;
         margin-bottom: 5%;
     }
+
     .first-data-point-container h2 {
-       font-size: 3.5rem;
+        font-size: 3.5rem;
     }
+
     .first-data-point-container h3 {
         font-size: 1.5rem;
     }
@@ -709,23 +793,27 @@
         width: 85%;
         margin-bottom: 5%;
     }
+
     .second-data-point-container h2 {
         font-size: 3.5rem;
-     }
-     .second-data-point-container h3 {
-         font-size: 1.5rem;
-     }
+    }
+
+    .second-data-point-container h3 {
+        font-size: 1.5rem;
+    }
 
     .third-data-point-container {
         width: 85%;
         margin-bottom: 5%;
     }
+
     .third-data-point-container h2 {
         font-size: 3.5rem;
-     }
-     .third-data-point-container h3 {
-         font-size: 1.5rem;
-     }
+    }
+
+    .third-data-point-container h3 {
+        font-size: 1.5rem;
+    }
 
     .back-to-top {
         width: 35%;
@@ -757,7 +845,7 @@
     }
 
     .middle-section {
-        display:flex;
+        display: flex;
         width: 100%;
         justify-content: space-evenly;
         padding: 0 2%;
@@ -775,8 +863,8 @@
         padding: 0 2%;
     }
 
-   
- .first-data-point-container {
+
+    .first-data-point-container {
         width: 23%;
     }
 
@@ -787,7 +875,7 @@
     .third-data-point-container {
         width: 23%;
     }
-    
+
     .back-to-top {
         width: 35%;
     }
