@@ -41,7 +41,7 @@ function RenderLandingPage(props) {
           <img
             src={GrantRatesByOfficeImg}
             alt="bar chart"
-            className="graph-img"
+            className="gr-office-img"
           />
 
           <h2>Search Grant Rates By Office</h2>
@@ -49,9 +49,9 @@ function RenderLandingPage(props) {
 
         <div className="graph-container">
           <img
+            className="gr-nationality-img"
             src={GrantRatesByNationalityImg}
             alt="pie chart"
-            className="graph-img"
           />
 
           <h2>Search Grant Rates By Nationality</h2>
@@ -61,7 +61,7 @@ function RenderLandingPage(props) {
           <img
             src={GrantRatesOverTimeImg}
             alt="line chart"
-            className="graph-img"
+            className="gr-time-img"
           />
 
           <h2>Search Grant Rates Over Time</h2>
