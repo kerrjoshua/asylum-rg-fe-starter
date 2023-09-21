@@ -7,7 +7,7 @@ import '../../../styles/RenderLandingPage.less';
 import { Button } from 'antd';
 import { useHistory } from 'react-router-dom';
 // for the purposes of testing PageNav
-// import PageNav from '../../common/PageNav';
+import PageNav from '../../common/PageNav';
 
 const downloadAddress =
   'https://humanrightsfirst.org/wp-content/uploads/2022/10/COW2021001887-I589Data.csv';
