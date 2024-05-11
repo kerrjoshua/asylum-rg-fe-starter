@@ -17,6 +17,8 @@ import ScrollToTopOnMount from '../../../utils/scrollToTopOnMount';
 const { background_color } = colors;
 
 function GraphWrapper(props) {
+  console.log(test_data);
+  console.log(process.env.REACT_APP_API_URI);
   const { set_view, dispatch } = props;
   let { office, view } = useParams();
   if (!view) {
@@ -99,6 +101,7 @@ function GraphWrapper(props) {
           },
         })
         .then(result => {
+          console.log(result);
           stateSettingCallback(view, office, test_data); // <-- `test_data` here can be simply replaced by `result.data` in prod!
         })
         .catch(err => {
