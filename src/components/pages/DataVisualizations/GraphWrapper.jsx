@@ -17,8 +17,7 @@ import ScrollToTopOnMount from '../../../utils/scrollToTopOnMount';
 const { background_color } = colors;
 
 function GraphWrapper(props) {
-  console.log(test_data);
-  console.log(process.env.REACT_APP_API_URI);
+  const url = process.env.REACT_APP_API_URI;
   const { set_view, dispatch } = props;
   let { office, view } = useParams();
   if (!view) {
@@ -75,25 +74,40 @@ function GraphWrapper(props) {
     
     */
 
+    const graphData = [];
+
     if (office === 'all' || !office) {
       axios
-        .get(process.env.REACT_APP_API_URI, {
-          // mock URL, can be simply replaced by `${Real_Production_URL}/summary` in prod!
+        .get(`${url}/fiscalSummary`, {
           params: {
             from: years[0],
             to: years[1],
           },
         })
         .then(result => {
-          stateSettingCallback(view, office, test_data); // <-- `test_data` here can be simply replaced by `result.data` in prod!
+          graphData[0] = result.data;
+        })
+        .catch(err => {
+          console.error(err);
+        });
+      axios
+        .get(`${url}/citizenshipSummary`, {
+          params: {
+            from: years[0],
+            to: years[1],
+          },
+        })
+        .then(result => {
+          graphData[0].citizenshipResults = result.data;
+
+          stateSettingCallback(view, office, graphData);
         })
         .catch(err => {
           console.error(err);
         });
     } else {
       axios
-        .get(process.env.REACT_APP_API_URI, {
-          // mock URL, can be simply replaced by `${Real_Production_URL}/summary` in prod!
+        .get(`${url}/fiscalSummary`, {
           params: {
             from: years[0],
             to: years[1],
@@ -101,11 +115,23 @@ function GraphWrapper(props) {
           },
         })
         .then(result => {
-          console.log(result);
-          stateSettingCallback(view, office, test_data); // <-- `test_data` here can be simply replaced by `result.data` in prod!
+          graphData[0] = result.data;
+          console.log(graphData);
         })
         .catch(err => {
           console.error(err);
+        });
+      axios
+        .get(`${url}/citizenshipSummary`, {
+          params: {
+            from: years[0],
+            to: years[1],
+            office: office,
+          },
+        })
+        .then(result => {
+          graphData[0].citizenshipResults = result.data;
+          stateSettingCallback(view, office, graphData);
         });
     }
   }
